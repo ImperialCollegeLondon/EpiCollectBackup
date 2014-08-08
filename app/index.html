@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html ng-app="EpiCollectBackup">
+	<head>
+		<title>EpiCollect+ Backup Loader</title>
+		<link rel="stylesheet" href="/css/main.css" type="text/css" />
+	</head>
+	<body>
+		<header class="">
+			<h1>EpiCollect+ Backup Loader</h1>
+		</header>
+
+		<div class="content-main" ng-controller="FileHandler">
+			<div class="files">
+				<form>
+					<label for="backup_file">Add File </label><input type="file" name="backup_file" />
+				</form>
+				<div dropzone></div>
+			</div>
+			<div class="statistics row">
+				<table>
+					<tr ng-repeat="(table, rows) in records">
+						<th ng-click="displayTable(table); console.debug(table);">{{table}}</th><td>{{rows.length}}</td>
+					</tr>
+				</table>
+			</div>
+
+			<textarea class="data row" ng-model="csvData">
+
+			</textarea>
+		</div>
+
+
+
+		<script src="/bower_components/angular/angular.js"></script>
+		<script src="/js/main.js"></script>
+	</body>
+</html>
